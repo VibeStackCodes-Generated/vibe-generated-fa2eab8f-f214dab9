@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '@/App'
+import { ComponentsDemo } from './components-demo'
 
 /**
  * Get basename dynamically from window location or environment
@@ -52,6 +53,15 @@ export const router = createBrowserRouter(
           index: true,
           element: (
             <div className="space-y-12 py-4">
+              {/* Add Components Demo Link */}
+              <div className="flex justify-end">
+                <a
+                  href="/components"
+                  className="rounded-lg bg-[#5200ff] px-4 py-2 text-white hover:bg-[#4000dd] transition-colors font-medium text-sm"
+                >
+                  View All Components →
+                </a>
+              </div>
               {/* Hero Section */}
               <div className="rounded-lg border border-gray-200 bg-gradient-to-br from-[#5200ff] via-purple-500 to-[#f5e942] p-8 text-white dark:border-gray-800 sm:p-12">
                 <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">Welcome to VibeStack</h1>
@@ -160,6 +170,10 @@ export const router = createBrowserRouter(
               </div>
             </div>
           ),
+        },
+        {
+          path: '/components',
+          element: <ComponentsDemo />,
         },
       ],
     },
